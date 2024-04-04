@@ -6,7 +6,7 @@ Animedoro is a study technique inspired by the traditional Pomodoro Technique bu
 
 ## Screenshots
 
-![main](https://raw.githubusercontent.com/prabesh09/animedoro/main/public/page.png)>
+![main](https://raw.githubusercontent.com/prabesh09/animedoro/main/public/page.png)
 
 ## Contributing
 
