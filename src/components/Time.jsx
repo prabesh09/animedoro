@@ -3,14 +3,14 @@ import useCountdown from '../hooks/useCountdown'
 import useTime from '../hooks/useTime'
 
 const Time = ({ changeBackground }) => {
-    const { time, start, stop, reset, setTime, setIsActive, docTitle } = useCountdown(1800)
+    const { time, start, stop, reset, setTime, setIsActive } = useCountdown(1800)
     const [isStudying, setIsStudying] = useState(true)
 
     const [formattedMinutes, formattedSeconds, title] = useTime(time)
 
     useEffect(() => {
         document.title = (isStudying ? "Study" : "Anime") + ' | ' + title
-    }, [])
+    })
 
     return (
         <div className='flex flex-col gap-10'>
