@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react'
 import useCountdown from '../hooks/useCountdown'
 import useTime from '../hooks/useTime'
 
-const Time = ({ changeBackground }) => {
-    const { time, start, stop, reset, setTime, setIsActive } = useCountdown(1800)
+const Time = ({ changeBackground, anime, study, setAnime, setStudy, timeState }) => {
     const [isStudying, setIsStudying] = useState(true)
+
+    const { time, start, stop, reset, setTime, setIsActive } = useCountdown(isStudying ? study : anime)
+
 
     const [formattedMinutes, formattedSeconds, title] = useTime(time)
 
@@ -17,13 +19,13 @@ const Time = ({ changeBackground }) => {
             <div className="flex justify-center gap-10">
                 <button className="bg-red-500 px-5 py-3 rounded-xl" onClick={() => {
                     setIsStudying(true)
-                    setTime(1800)
+                    setTime(study)
                     setIsActive(false)
                     changeBackground('study')
                 }}>Study</button>
                 <button className="bg-red-500 px-5 py-3 rounded-xl" onClick={() => {
                     setIsStudying(false)
-                    setTime(1800)
+                    setTime(anime)
                     setIsActive(false)
                     changeBackground('anime')
                 }}>Anime</button>

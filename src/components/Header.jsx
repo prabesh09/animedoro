@@ -1,8 +1,18 @@
-const Header = () => {
+import { IoSettings } from "react-icons/io5"
+
+
+const Header = ({ displaySetting }) => {
     return (
-        <div className="text-[#f0f0f0] flex justify-center items-center mb-[1em] font-semibold text-[2em] drop-shadow-xl">
-            <span>anime</span>
-            <span className="text-red-500">doro</span>
+        <div className="text-[#f0f0f0] flex justify-between w-full gap-2 items-center font-semibold text-[1.5em] px-10">
+            <h1>
+                <span>anime</span>
+                <span className="text-red-500">doro</span>
+            </h1>
+
+            <button className="" onClick={displaySetting}>
+                <IoSettings />
+            </button>
+
         </div>
     )
 }

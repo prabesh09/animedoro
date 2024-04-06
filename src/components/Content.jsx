@@ -1,13 +1,28 @@
+import { useState } from "react"
 import Quotes from "./Quotes"
 import Header from "./Header"
 import Time from "./Time"
-import { useState } from "react"
+import Setting from "./Setting"
+import useLocalStorage from "../hooks/useLocalStorage"
 
 const Content = () => {
     const [studyBackground, setStudyBackground] = useState(true)
+    const [showSetting, setShowSetting] = useState(false)
+    const [update, setUpdate] = useState(true)
+
+    const [anime, setAnime] = useLocalStorage('anime', 1200)
+    const [study, setStudy] = useLocalStorage('study', 2400)
 
     const changeBackground = (state) => {
         setStudyBackground(state == 'study' ? true : false)
+    }
+
+    const displaySetting = () => {
+        setShowSetting(true)
+    }
+
+    const closeMenuHandler = () => {
+        setShowSetting(false)
     }
 
     return (
@@ -16,9 +31,12 @@ const Content = () => {
 
             {!studyBackground && <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHJlZmRxMTY4MmMzYWFuZXc1d215Z204Y2gydnJ4eGdpejY5YjAzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EAOTD2L0qyvhm/giphy.gif" alt="Anime GIF" className="absolute inset-0 w-full h-full object-cover opacity-50 -z-50" />}
 
-            <Header />
-            <Time changeBackground={changeBackground} />
+            <Header displaySetting={displaySetting} />
+            <Time changeBackground={changeBackground} anime={anime} study={study} setAnime={setAnime} setStudy={setStudy} />
             <Quotes />
+
+            {showSetting && <Setting closeMenuHandler={closeMenuHandler} anime={anime} study={study} setAnime={setAnime} setStudy={setStudy} />}
+
         </div >
     )
 }
