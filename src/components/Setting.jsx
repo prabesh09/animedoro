@@ -1,10 +1,10 @@
-import { GiTireIronCross } from "react-icons/gi";
+import { GiTireIronCross } from "react-icons/gi"
 
 const Setting = ({ closeMenuHandler, anime, setAnime, study, setStudy }) => {
 
     const handleAnimeChange = (event) => {
         setAnime(event.target.value * 60)
-    };
+    }
 
     const handleStudyChange = (event) => {
         setStudy(event.target.value * 60)

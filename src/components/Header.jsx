@@ -1,5 +1,5 @@
 import { IoSettings } from "react-icons/io5"
-
+import { SiGithub } from "react-icons/si"
 
 const Header = ({ displaySetting }) => {
     return (
@@ -9,9 +9,15 @@ const Header = ({ displaySetting }) => {
                 <span className="text-red-500">doro</span>
             </h1>
 
-            <button className="" onClick={displaySetting}>
-                <IoSettings />
-            </button>
+            <div className="flex gap-[1em]">
+                <a href="https://github.com/prabesh09/animedoro">
+                    <SiGithub />
+                </a>
+
+                <button onClick={displaySetting}>
+                    <IoSettings />
+                </button>
+            </div>
 
         </div>
     )
