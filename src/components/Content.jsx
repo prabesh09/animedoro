@@ -8,8 +8,6 @@ import useLocalStorage from "../hooks/useLocalStorage"
 const Content = () => {
     const [studyBackground, setStudyBackground] = useState(true)
     const [showSetting, setShowSetting] = useState(false)
-    const [update, setUpdate] = useState(true)
-
     const [anime, setAnime] = useLocalStorage('anime', 1200)
     const [study, setStudy] = useLocalStorage('study', 2400)
 

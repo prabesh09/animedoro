@@ -14,6 +14,11 @@ const Time = ({ changeBackground, anime, study, setAnime, setStudy, timeState })
         document.title = (isStudying ? "Study" : "Anime") + ' | ' + title
     })
 
+    useEffect(() => {
+        setTime(isStudying ? study : anime)
+        reset()
+    }, [anime, study])
+
     return (
         <div className='flex flex-col gap-10'>
             <div className="flex justify-center gap-10">
