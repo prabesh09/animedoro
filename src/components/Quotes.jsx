@@ -25,7 +25,11 @@ const Quotes = () => {
     }
 
     const updateQuoteHistory = (quoteData) => {
-        setQuoteHistory([...quoteHistory, quoteData])
+        let quotes = [...quoteHistory, quoteData]
+        if (quotes.length > 100) {
+            quotes.shift()
+        }
+        setQuoteHistory(quotes)
     }
 
     return (

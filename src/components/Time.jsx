@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import useCountdown from '../hooks/useCountdown'
 import useTime from '../hooks/useTime'
 
-const Time = ({ changeBackground, anime, study, setAnime, setStudy, timeState }) => {
+const Time = ({ changeBackground, anime, study }) => {
     const [isStudying, setIsStudying] = useState(true)
 
     const { time, start, stop, reset, setTime, setIsActive } = useCountdown(isStudying ? study : anime)

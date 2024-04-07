@@ -30,7 +30,7 @@ const Content = () => {
             {!studyBackground && <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHJlZmRxMTY4MmMzYWFuZXc1d215Z204Y2gydnJ4eGdpejY5YjAzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EAOTD2L0qyvhm/giphy.gif" alt="Anime GIF" className="absolute inset-0 w-full h-full object-cover opacity-50 -z-50" />}
 
             <Header displaySetting={displaySetting} />
-            <Time changeBackground={changeBackground} anime={anime} study={study} setAnime={setAnime} setStudy={setStudy} />
+            <Time changeBackground={changeBackground} anime={anime} study={study} />
             <Quotes />
 
             {showSetting && <Setting closeMenuHandler={closeMenuHandler} anime={anime} study={study} setAnime={setAnime} setStudy={setStudy} />}
